@@ -10,5 +10,5 @@ Using a regression analysis, I found that college students with low income paren
 inventors. On the other hand, college students with high income parents are more likely to become inventors. 
 
 # What can we do? 
-Policy change. Incentives. Increase funding in the education sector. More resources. 
+Policy change. Incentives. Increase funding in the education sector. More resources for low income students. 
 
