@@ -1,4 +1,4 @@
-# Invention-Rates-by-Parental-Income
+# Invention Rates by Parental Income
 Investigating the relationship between parental income and rates of invention among college students in the United States.
 
 # Why?
