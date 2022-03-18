@@ -2,42 +2,43 @@
 
 **Set Working Directory 
 cd "/Users/lauren/Desktop/Invention Rates/Project"
-*load in data
+
+*load in the data 
 use inventionrates.dta
 
 **Rename variables that represent number of students from each parent income quintile
-#First quintile
+#First quintile students
 rename count_pq1 firstq
 
-#Second quintile
+#Second quintile students
 rename count_pq2 secondq
 
-#Third quintile
+#Third quintile students
 rename count_pq3 thirdq
 
-#Fourth quintile
+#Fourth quintile students
 rename count_pq4 fourthq
 
-#Fifth quintile 
+#Fifth quintile students
 rename count_pq5 fifthq
 
 **Rename variables that represent share of inventors conditional on parent income quintile 
-#First quintile
+#First quintile inventors
 rename inventor_pq1 firstiq
 
-#Second quintile
+#Second quintile inventors
 rename inventor_pq2 secondiq
 
-#Third quintile
+#Third quintile inventors
 rename inventor_pq3 thirdiq
 
-#Fourth quintile
+#Fourth quintile inventors
 rename inventor_pq4 fourthiq
 
-#Fifthquintile 
+#Fifthquintile inventors
 rename inventor_pq5 fifthiq
 
-**Table 1: Summary Statistics
+**Table 1: Summary Statistics using 4 variables 
 sum firstq fifthq fistiq fifthiq
 
 **Figure 1: Bar Graph
@@ -47,10 +48,12 @@ b1title("First and Fifth Parent Income Quintiles")
 title("Average Number of Students Representing First and Fifth Parent Income Quintiles")
 
 **Figure 2: Scatterplot
-twoway scatter total_patents fifthq || lfit total_patents fifthq
+twoway scatter fifthq total_patents || lfit fifthq total_patents, lw(0.7) lc(cranberry) title("Share of Inventors Among the Fifth Parent Income Quintile")
+xtitle("College Students Among the Fifth Parent Income Quintile") ytitle("Share of Students Granted a Patent") graphregion(color(white) fcolor(white))
 
 **Figure 3: Scatterplot
-twoway scatter total_patents firstq || lfit total_patents firstq
+twoway scatter firstq total_patents || lfit firstq total_patents, lw(0.7) lc(cranberry) title("Share of Inventors Among the First Parent Income Quintile")
+xtitle("College Student Among the Fifth Parent Income Quintile") ytitle("Share of Students Granted a Patent") graphregion(color(white) fcolor(white))
 
 **Regression tables
 *Install package for outreg2
