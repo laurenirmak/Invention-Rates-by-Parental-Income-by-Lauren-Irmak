@@ -53,7 +53,7 @@ xtitle("College Students Among the Fifth Parent Income Quintile") ytitle("Share 
 
 **Figure 3: Scatterplot
 twoway scatter firstq total_patents || lfit firstq total_patents, lw(0.7) lc(cranberry) title("Share of Inventors Among the First Parent Income Quintile")
-xtitle("College Student Among the Fifth Parent Income Quintile") ytitle("Share of Students Granted a Patent") graphregion(color(white) fcolor(white))
+xtitle("College Student Among the First Parent Income Quintile") ytitle("Share of Students Granted a Patent") graphregion(color(white) fcolor(white))
 
 **Regression tables
 *Install package for outreg2
