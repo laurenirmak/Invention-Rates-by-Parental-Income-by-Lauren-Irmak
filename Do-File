@@ -1,0 +1,82 @@
+//Invention Rates Estimates by Parental Income//
+
+*Change working directory
+cd "/Users/Lauren/Desktop/Invention Rates/Project"
+
+*load in the data 
+use inventionrates.dta
+
+**Rename variables that represent number of students from each parent income quintile they fall under
+#First quintile students variable
+rename count_pq1 firstq
+
+#Second quintile students variable
+rename count_pq2 secondq
+
+#Third quintile students variable
+rename count_pq3 thirdq
+
+#Fourth quintile students variable
+rename count_pq4 fourthq
+
+#Fifth quintile students variable
+rename count_pq5 fifthq
+
+**Rename variables that represent share of inventors conditional on parent income quintile they fall under
+#First quintile inventors variable
+rename inventor_pq1 firstiq
+
+#Second quintile inventors variable
+rename inventor_pq2 secondiq
+
+#Third quintile inventors variable
+rename inventor_pq3 thirdiq
+
+#Fourth quintile inventors variable
+rename inventor_pq4 fourthiq
+
+#Fifthquintile inventors variable
+rename inventor_pq5 fifthiq
+
+**Table 1: Summary Statistics using 4 variables 
+sum firstq fifthq fistiq fifthiq
+
+**Figure 1: Bar Graph
+graph bar firstq fifthq, 
+ytitle("Number of Students")
+b1title("First and Fifth Parent Income Quintiles") 
+title("Average Number of Students Representing the First and Fifth Parent Income Quintile")
+
+**Figure 2: Scatterplot for Fifth Parent Income Quintile Students
+twoway scatter fifthq total_patents || lfit fifthq total_patents, lw(0.7) lc(cranberry) 
+title("Share of Inventors Among the First Parent Income Quintile")
+xtitle("College Students Among the Fifth Parent Income Quintile") 
+ytitle("Share of Students Granted a Patent") graphregion(color(white) fcolor(white))
+
+**Figure 3: Scatterplot for First Parent Income Quintile Students
+twoway scatter firstq total_patents || lfit firstq total_patents, lw(0.7) lc(cranberry) 
+title("Share of Inventors Among the First Parent Income Quintile")
+xtitle("College Student Among the First Parent Income Quintile") 
+ytitle("Share of Students Granted a Patent") graphregion(color(white) fcolor(white))
+
+**Regression tables
+*Install package for outreg2
+ssc install outreg2 
+
+**Table 3
+regress fifthq total_patents 
+outreg2 using myfile, replace ctitle(5th Q)label
+
+regress firstq total_patents
+outreg2 using myfile, append ctitle(1st Q)label
+
+//End//
+
+
+
+
+
+
+
+
+
