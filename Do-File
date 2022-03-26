@@ -39,7 +39,7 @@ rename inventor_pq4 fourthiq
 rename inventor_pq5 fifthiq
 
 **Table 1: Summary Statistics using 4 variables 
-sum firstq fifthq fistiq fifthiq
+sum firstq fifthq fistiq fifthiq total_patents top5_cit
 
 **Figure 1: Bar Graph
 graph bar firstq fifthq, 
